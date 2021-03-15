@@ -1,0 +1,26 @@
+<footer>
+    <div class="container row">
+        <div class="social col-xs">
+            <h3>Social Media</h3>
+            <ul>
+                <a href="https://www.instagram.com/lauri.legui/">Instagram</a><br>
+                <a href="https://twitter.com/LeguiLaureano">Twitter</a><br>
+                <a href="https://github.com/LauriLeguizamon">GitHub</a>
+            </ul>
+        </div>
+        <div class="about-me col-xs"> 
+            <h3>About Me</h3>
+            <p>I am a 15 year old developer student at Platzi.<br>
+            <mat-icon>room</mat-icon> Mar del Plata, Argentina</p>
+        </div>
+
+        <div class="about-me col-xs"> 
+            <h3>Contact</h3>
+            <mat-form-field>
+                <input matInput placeholder="write your email" [formControl]="emailField"type="email">
+            </mat-form-field>
+            <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">enviar</button>
+            <p *ngIf="emailField.invalid">El campo no es valido</p>
+        </div>
+    </div>
+</footer>

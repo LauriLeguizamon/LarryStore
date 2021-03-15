@@ -1,0 +1,25 @@
+mat-card {
+    width: 85%;
+    margin: 10px auto;
+}
+button {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.register-p {
+    margin: 10px;
+}
+
+@media (min-width: 426px) {
+    mat-card {
+        width: 200px;
+        margin: 50px auto;
+    }
+    mat-form-field {
+        width: auto;
+    }
+}
