@@ -4,9 +4,6 @@ footer {
     width: 100%;
 }
 
-.containter {
-}
-
 .social {
     text-align: center;
     padding: 10px;
@@ -21,6 +18,11 @@ footer {
         color: #e4d2d2
     }
 
+    a:hover {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
 }
 
 .about-me {
@@ -30,5 +32,34 @@ footer {
 
     h3 {
         font-weight: bold;
+    }
+
+    .location {
+        cursor: pointer;
+        text-decoration: none;
+        color: #e4d2d2;
+    }
+
+    .location:hover {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.contact {
+    text-align: center;
+    padding: 10px;
+    color: #dcdcdc;
+
+
+    .footer-contact-form {
+        background-color: #dcdcdc;
+        color: black;
+        padding: 10px 0;
+        border-radius: 10px;
+
+        .email-field {
+            margin-right: 5px;
+        }
     }
 }

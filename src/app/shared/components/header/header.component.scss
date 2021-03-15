@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-nav > a{ 
+.nav-items{ 
     text-decoration: none;
     margin: 3px;
 }
@@ -7,6 +7,12 @@ nav > a{
 .store-name {
     font-family: 'Abril Fatface', cursive;
     font-size: 26px;
+		cursor: pointer;
+		outline: none;
+}
+
+.sidenav {
+	width: 40%
 }
 
 .active {
@@ -21,4 +27,14 @@ nav > a{
 
 button {
     margin-right: 10px;
+}
+
+.logout-icon {
+	margin-left: 5px;
+}
+
+@media (max-width: 426px) {
+	.store-name {
+		font-size: 20px
+	}
 }

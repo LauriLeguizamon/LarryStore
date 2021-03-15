@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatStepperModule } from '@angular/material/stepper';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 @NgModule({
   declarations: [],
@@ -42,6 +43,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     LayoutModule,
     MatFormFieldModule,
     MatStepperModule,
+    FlexLayoutModule
   ],
   exports: [
     MatButtonModule,
@@ -62,6 +64,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     LayoutModule,
     MatFormFieldModule,
     MatStepperModule,
+    FlexLayoutModule
   ],
 })
 export class MaterialModule {}

@@ -1,23 +1,43 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <div class="row between-xs middle-xs header-row">
-            <nav>
-                <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-                <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
-                <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
-            </nav>
-            <h1 class="store-name">LARRYSTORE</h1>
-            <div>
-                <button *ngIf="!logged"mat-stroked-button routerLink="/register">Register</button>
-                <button *ngIf="!logged" mat-button routerLink="/login">Sign In</button>
-                <button *ngIf="logged" mat-button (click)="logout()">Logout</button>
-                <button *ngIf="logged" mat-button routerLink="/admin/products">Admin</button>
-                <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
-                    <mat-icon>shopping_cart</mat-icon>
-                    Cart
-                </a>
-            </div>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>
-
+<mat-sidenav-container fxFlexFill class="example-container" style="height: 100vh">
+	<mat-sidenav class="sidenav" color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true" style="height: 100vh">
+		<mat-toolbar>Navigation</mat-toolbar>
+		<mat-nav-list fxLayout="column">
+			<a mat-list-item routerLink="/home" (click)="sidenav.toggle()">Home</a>
+			<a mat-list-item routerLink="/products" (click)="sidenav.toggle()">Products</a>
+			<a mat-list-item routerLink="/contact" (click)="sidenav.toggle()">Contact</a>
+			<a *ngIf="logged" mat-list-item (click)="sidenav.toggle(); logout()">Logout<mat-icon class="logout-icon">logout</mat-icon></a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar color="primary">
+			<div fxShow="true" fxHide.gt-xs="true">
+				<button mat-icon-button (click)="sidenav.toggle()">
+					<mat-icon>menu</mat-icon>
+				</button>
+			</div>
+				<nav class="row between-xs middle-xs header-row">
+					<div fxShow="true" fxHide.lt-sm="true" class="nav-items">
+						<a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+						<a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+						<a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+					</div>
+					<h1 class="store-name" routerLink="/home">LARRYSTORE</h1>
+					<div>
+						<button *ngIf="!logged" mat-button routerLink="/login">Sign In</button>
+						<button *ngIf="logged" mat-button routerLink="/admin/products">
+							Admin
+						</button>
+						<a
+						routerLink="/order"
+						mat-raised-button
+						[matBadge]="total$ | async"
+						matBadgeColor="warn">
+						<mat-icon>shopping_cart</mat-icon>
+						<span fxShow="true" fxHide.lt-sm="true">Cart</span>
+						</a>
+					</div>
+				</nav>
+		</mat-toolbar>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

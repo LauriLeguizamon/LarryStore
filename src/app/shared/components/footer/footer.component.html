@@ -1,26 +1,43 @@
 <footer>
-    <div class="container row">
-        <div class="social col-xs">
-            <h3>Social Media</h3>
-            <ul>
-                <a href="https://www.instagram.com/lauri.legui/">Instagram</a><br>
-                <a href="https://twitter.com/LeguiLaureano">Twitter</a><br>
-                <a href="https://github.com/LauriLeguizamon">GitHub</a>
-            </ul>
-        </div>
-        <div class="about-me col-xs"> 
-            <h3>About Me</h3>
-            <p>I am a 15 year old developer student at Platzi.<br>
-            <mat-icon>room</mat-icon> Mar del Plata, Argentina</p>
-        </div>
-
-        <div class="about-me col-xs"> 
-            <h3>Contact</h3>
-            <mat-form-field>
-                <input matInput placeholder="write your email" [formControl]="emailField"type="email">
-            </mat-form-field>
-            <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">enviar</button>
-            <p *ngIf="emailField.invalid">El campo no es valido</p>
-        </div>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="social col-xs">
+      <h3>Social Media</h3>
+      <ul>
+        <a href="https://www.instagram.com/lauri.legui/">Instagram</a
+        ><br />
+        <a href="https://twitter.com/LeguiLaureano">Twitter</a
+        ><br />
+        <a href="https://github.com/LauriLeguizamon">GitHub</a>
+      </ul>
     </div>
+    <div class="about-me col-xs">
+      <h3>About Me</h3>
+      <p>
+        I am a 15 year old developer student at Platzi.<br />
+        <a href="https://www.google.com.ar/maps/place/Mar+del+Plata,+Provincia+de+Buenos+Aires/@-38.0175459,-57.6705735,12z/data=!3m1!4b1!4m5!3m4!1s0x9584d94d19d34209:0xdd9670804bfed126!8m2!3d-38.0054771!4d-57.5426106" class="location"><mat-icon>room</mat-icon> Mar del Plata, Argentina</a>
+      </p>
+    </div>
+
+    <div fxShow="true" fxHide.lt-sm="true" class="contact col-xs">
+      <h3>Contact</h3>
+      <form class="footer-contact-form">
+        <mat-form-field class="email-field">
+          <input
+            matInput
+            placeholder="write your email"
+            [formControl]="emailField"
+            type="email"
+          />
+        </mat-form-field>
+        <button
+          mat-stroked-button
+          [disabled]="emailField.invalid"
+          (click)="sendMail()"
+        >
+          enviar
+        </button>
+        <p *ngIf="emailField.invalid">El campo no es valido</p>
+      </form>
+    </div>
+  </div>
 </footer>
