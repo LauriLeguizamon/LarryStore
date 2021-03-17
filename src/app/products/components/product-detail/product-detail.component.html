@@ -1,15 +1,25 @@
-<div *ngIf="product">
-    <div class="">
-        <img [src]="product.image" alt="">
-    </div>
-    <div class="">
-        <ul>
-            <li>Nombre: {{ product.title }}</li>
-            <li>Precio: {{ product.price | currency}}</li>
-        </ul>
-        <p>{{ product.description}}</p>
-    </div>
-    <button (click)="createProduct()">crear</button>
-    <button (click)="updateProduct()">update</button>
-    <button (click)="deleteProduct()">Delete</button>
+<div *ngIf="product" class="card-container">
+    <mat-card class="card">
+        <mat-card-header> 
+            <mat-card-title>{{ product.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="wrapper">
+                <div class="left">
+                    <img class="product-img" [src]="product.image" alt="">
+                </div>
+                <div class="right">
+                    <div class="price-container">
+                        <span class="price-label">Price</span><br>
+                        <span class="price">{{ product.price | currency}}</span>
+                    </div>
+                    <button class="cart-btn" mat-raised-button color="primary" (click)="addCart()" routerLink="/products">Add Cart</button>
+                    <div class="description-container">
+                        <span class="description-label">Description</span>
+                        <p class="description">{{ product.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

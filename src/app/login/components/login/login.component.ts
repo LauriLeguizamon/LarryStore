@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       const value = this.loginForm.value;
       this.authService.loginUser(value.email, value.password)
       .then(() => {
-        this.router.navigate(['/admin/dashboard']);
+        this.router.navigate(['/admin/products']);
       })
       .catch(err => {
         alert('Las credenciales no son validas')

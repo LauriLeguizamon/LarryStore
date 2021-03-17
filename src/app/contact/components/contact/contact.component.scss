@@ -1,0 +1,28 @@
+.card {
+  width: 50%;
+  margin: 50px auto;
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+
+    .text-area {
+      height: 300px;
+    }
+  }
+}
+
+.mat-drawer-content {
+  overflow: hidden;
+}
+
+@media (max-width: 426px) {
+  .card {
+      width: 80%;
+      margin: 20px auto;
+  }
+
+  .text-area {
+      height: 200px;
+  }
+}

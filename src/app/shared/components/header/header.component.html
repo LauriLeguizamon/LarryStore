@@ -1,4 +1,4 @@
-<mat-sidenav-container fxFlexFill class="example-container" style="height: 100vh">
+<mat-sidenav-container fxFlexFill class="example-container" style="max-width: 100% ">
 	<mat-sidenav class="sidenav" color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true" style="height: 100vh">
 		<mat-toolbar>Navigation</mat-toolbar>
 		<mat-nav-list fxLayout="column">
@@ -27,6 +27,7 @@
 						<button *ngIf="logged" mat-button routerLink="/admin/products">
 							Admin
 						</button>
+						<button fxShow="true" fxHide.lt-sm="true" *ngIf="logged" mat-button (click)="logout()">Logout</button>
 						<a
 						routerLink="/order"
 						mat-raised-button
